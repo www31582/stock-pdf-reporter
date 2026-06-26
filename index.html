@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Share Stock PDF Reporter - AI Quant Tools</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', sans-serif; background: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        .hero { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 60px 20px; text-align: center; border-radius: 12px; margin-bottom: 30px; }
+        .hero h1 { font-size: 2em; margin-bottom: 10px; }
+        .hero p { font-size: 1.1em; opacity: 0.9; }
+        
+        .card { background: white; border-radius: 12px; padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .card h2 { color: #1a73e8; margin-bottom: 15px; }
+        .card ul { padding-left: 20px; }
+        .card li { margin-bottom: 8px; }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .pricing-card { border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; text-align: center; transition: all 0.2s; }
+        .pricing-card:hover { border-color: #1a73e8; transform: translateY(-2px); }
+        .pricing-card.featured { border-color: #1a73e8; background: #f0f7ff; }
+        .pricing-card .price { font-size: 2em; font-weight: bold; color: #1a73e8; margin: 10px 0; }
+        .pricing-card .desc { font-size: 0.9em; color: #666; margin-bottom: 15px; }
+        .pricing-card .btn { display: inline-block; background: #1a73e8; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+        .pricing-card .btn:hover { background: #1557b0; }
+        
+        .demo-img { max-width: 100%; border-radius: 8px; border: 1px solid #e0e0e0; margin: 15px 0; }
+        
+        .footer { text-align: center; padding: 30px; color: #999; font-size: 0.9em; }
+        
+        .donate-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .donate-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .donate-btn.bmc { background: #FFDD00; color: #000; }
+        .donate-btn.wechat { background: #07C160; color: white; }
+        .donate-btn.alipay { background: #1677FF; color: white; }
+        
+        .code-block { background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; font-family: 'Consolas', monospace; font-size: 0.9em; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>A-Share Stock PDF Reporter</h1>
+            <p>Professional Technical Analysis Reports for Chinese A-Share Stocks</p>
+            <p style="margin-top:15px;font-size:0.9em;opacity:0.8">Generate beautiful PDF reports with one command</p>
+        </div>
+        
+        <div class="card">
+            <h2>Features</h2>
+            <ul>
+                <li>Automatically fetch real-time A-share stock data</li>
+                <li>Professional charts: price trend, volume, MACD, RSI</li>
+                <li>Technical indicators: MA5/10/20/60, Bollinger Bands</li>
+                <li>Auto-generated technical signal analysis</li>
+                <li>Beautiful 5-page PDF report</li>
+                <li>Fully local - no API key needed</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>Sample Report</h2>
+            <p>Download a sample PDF report for 600519 (Maotai):</p>
+            <p><a href="https://github.com/www31582/stock-pdf-reporter/releases/download/v1.0.0/test_report.pdf" style="color:#1a73e8;font-weight:bold;">Download Sample Report (PDF, 240KB)</a></p>
+            <img src="https://via.placeholder.com/600x300/1a73e8/ffffff?text=Sample+PDF+Report+Preview" alt="Sample Report" class="demo-img" style="display:none;">
+        </div>
+        
+        <div class="card">
+            <h2>Quick Start</h2>
+            <div class="code-block">
+# Install
+pip install akshare fpdf2 matplotlib pandas numpy
+
+# Generate report for Maotai (600519)
+python stock_report.py 600519
+
+# Generate report for Ping An (601318) - 120 days
+python stock_report.py 601318 --days 120 -o pingan.pdf
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Get Your Custom Report</h2>
+            <p>Don't want to run the code yourself? I'll generate a professional report for any A-share stock!</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Single Report</h3>
+                    <div class="price">$5</div>
+                    <div class="desc">One stock, one PDF report<br>(~35 RMB)</div>
+                    <a href="https://buymeacoffee.com/aiquants" class="btn">Buy Now</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Portfolio Pack</h3>
+                    <div class="price">$10</div>
+                    <div class="desc">3 stocks + comparison<br>(~70 RMB)</div>
+                    <a href="https://buymeacoffee.com/aiquants" class="btn">Best Value</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Custom Dev</h3>
+                    <div class="price">$20+</div>
+                    <div class="desc">Custom trading tools<br>Contact for quote</div>
+                    <a href="https://github.com/www31582/stock-pdf-reporter/issues/new" class="btn">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="text-align:center;">
+            <h2>Support the Project</h2>
+            <p>If you find this tool useful, buy me a coffee!</p>
+            <div class="donate-buttons">
+                <a href="https://buymeacoffee.com/aiquants" class="donate-btn bmc">☕ Buy Me a Coffee</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Stock PDF Reporter - MIT License</p>
+            <p><a href="https://github.com/www31582/stock-pdf-reporter" style="color:#1a73e8;">GitHub Repository</a></p>
+        </div>
+    </div>
+</body>
+</html>
