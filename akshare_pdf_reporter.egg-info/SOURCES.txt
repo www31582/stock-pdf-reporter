@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+stock_report.py
+akshare_pdf_reporter.egg-info/PKG-INFO
+akshare_pdf_reporter.egg-info/SOURCES.txt
+akshare_pdf_reporter.egg-info/dependency_links.txt
+akshare_pdf_reporter.egg-info/entry_points.txt
+akshare_pdf_reporter.egg-info/requires.txt
+akshare_pdf_reporter.egg-info/top_level.txt

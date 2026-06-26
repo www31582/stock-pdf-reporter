@@ -1,70 +1,73 @@
-﻿# A-Share Stock PDF Report Generator
+# Stock PDF Reporter
 
-一个专业的 A股技术分析 PDF 报告生成工具，使用 Python 和 akshare 数据源。
+> Generate professional PDF technical analysis reports for Chinese A-Share stocks with one command.
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/yourusername)
-[![ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/yourusername)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/aiquants)
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub_Sponsors-30363D?style=for-the-badge&logo=github-sponsors&logoColor=#white)](https://github.com/sponsors/www31582)
+[![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/akshare-pdf-reporter/)
+![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Features
+## ✨ Features
 
-- ✅ 自动获取 A 股实时数据（前复权）
-- 📊 专业级技术分析图表（价格走势、成交量、MACD、RSI）
-- 📈 核心技术指标计算（MA5/10/20/60、布林带、MACD、RSI）
-- 📄 生成精美的 PDF 分析报告
-- 🎯 自动技术信号分析（均线、MACD 金叉死叉、超买超卖）
-- 🇨🇳 中文界面，完美支持中文字体
+- **Real-time data**: Automatic A-share stock data via Sina Finance
+- **Technical indicators**: MA5/10/20/60, MACD, RSI(14), Bollinger Bands, Volatility
+- **Professional charts**: Price trend + volume + MACD + RSI in one report
+- **Auto analysis**: Generates technical signals (Golden/Death Cross, Overbought/Oversold)
+- **Beautiful PDF**: 5-page professional report with cover page
+- **No API key**: Fully local, works out of the box
+- **Chinese support**: Full Chinese font support
 
-## Installation
+## 📦 Installation
 
+```bash
+pip install akshare-pdf-reporter
+```
+
+Or install dependencies manually:
 ```bash
 pip install akshare fpdf2 matplotlib pandas numpy
 ```
 
-## Usage
+## 🚀 Usage
 
 ```bash
-# 基础用法 - 生成贵州茅台60天报告
-python stock_report.py 600519.SH
+# Quick report for Maotai (600519)
+python stock_report.py 600519
 
-# 指定天数
-python stock_report.py 000001.SZ --days 90
+# Specify days and output
+python stock_report.py 000001 --days 120 -o my_report.pdf
 
-# 指定输出文件
-python stock_report.py 300750.SZ --days 120 -o my_report.pdf
-
-# 更多股票
-python stock_report.py 601318.SH  # 中国平安
-python stock_report.py 000858.SZ  # 五粮液
-python stock_report.py 002415.SZ  # 海康威视
-python stock_report.py 600036.SH  # 招商银行
+# More stocks
+python stock_report.py 601318   # China Ping An
+python stock_report.py 300750   # CATL
+python stock_report.py 000858   # Wuliangye
+python stock_report.py 600036   # China Merchants Bank
 ```
 
-## Output Example
+## 📄 Report Sample
 
-生成的 PDF 报告包含：
-1. **封面** - 股票名称、代码、最新价格、涨跌幅
-2. **核心指标概览** - 价格统计、均线、RSI、MACD、波动率
-3. **价格走势图** - 收盘价曲线 + MA5/10/20 + 成交量柱状图
-4. **技术指标图** - MACD + RSI 组合图表
-5. **技术信号分析** - 均线排列、超买超卖、MACD 金叉死叉、布林带、量价分析
-6. **综合判断** - 多空信号汇总
+Download a sample: [test_report.pdf](https://github.com/www31582/stock-pdf-reporter/releases/download/v1.0.0/test_report.pdf)
 
-## Sample Report
+The PDF includes:
+1. **Cover Page** - Stock name, price, daily change
+2. **Key Statistics** - Price levels, MA values, RSI, MACD, volatility
+3. **Price Chart** - Close price + MA5/10/20 + volume bars
+4. **Technical Indicators** - MACD + RSI combo chart
+5. **Signal Analysis** - Auto-detected technical signals + overall rating
 
-运行后即可看到类似如下输出：
-```
-🚀 正在获取 600519.SH 过去 60 天的数据...
-✅ 获取到 42 条数据
-✅ 技术指标计算完成
-📊 生成图表...
-📄 生成PDF报告...
-✅ 报告已生成: D:/projects/600519_SH_report.pdf
-```
+## 🤝 Support
 
-## License
+If you find this tool useful, consider supporting development:
 
-MIT
+- ☕ [Buy Me a Coffee](https://buymeacoffee.com/aiquants) - One-time support
+- ⭐ Star the repo - It helps others discover the tool
+- 📢 Share with friends who trade A-shares
 
-## Support
+## 📝 License
 
-如果这个工具对你有帮助，欢迎请我喝杯咖啡 ☕
+MIT License - Free for commercial and personal use.
+
+## ⚠️ Disclaimer
+
+This tool is for educational and reference purposes only. Not financial advice. Trading stocks involves risk.
